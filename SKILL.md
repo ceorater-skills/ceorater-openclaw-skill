@@ -1,6 +1,6 @@
 ---
 name: ceorater
-description: Get institutional-grade CEO performance analytics. Query CEORaterScore, AlphaScore, RevenueCAGRScore, and CompScore for S&P 500 CEOs. Useful for investment research, due diligence, and executive compensation analysis.
+description: Get institutional-grade CEO performance analytics for S&P 500 companies. Proprietary scores: CEORaterScore (composite), AlphaScore (market outperformance), RevenueCAGRScore (revenue growth), CompScore (compensation efficiency). Underlying data includes Total Stock Return (TSR) vs. S&P 500 (SPY), average annual returns, CEO total compensation (most recent fiscal year from proxy filings), and tenure-adjusted Revenue CAGR. Each record includes CEO name, company name, ticker, sector, industry, and tenure dates. Coverage: 516 CEOs as of February 2026, updated daily. Useful for investment research, due diligence, and executive compensation analysis.
 triggers:
   - "CEO performance"
   - "CEORater"
@@ -10,6 +10,8 @@ triggers:
   - "CEO compensation"
   - "AlphaScore"
   - "CompScore"
+  - "TSR"
+  - "total stock return"
 metadata:
   openclaw:
     requires:
@@ -47,8 +49,10 @@ Query CEO performance data for S&P 500 and major U.S. public companies via the C
 | AlphaScore | 0-100 | Performance vs. market benchmark |
 | RevenueCAGRScore | 0-100 | Tenure-adjusted revenue growth percentile |
 | CompScore | A-F | Compensation efficiency grade |
-| TSR Multiple | numeric | Total shareholder return during tenure |
-| TSR vs SPY | numeric | Performance relative to S&P 500 |
+| TSR During Tenure | % | Total Stock Return during CEO tenure |
+| TSR vs. S&P 500 | % | Performance relative to S&P 500 (SPY) |
+| CEO Compensation | $M | Total compensation from most recent proxy filing |
+| Revenue CAGR | % | Tenure-adjusted compound annual revenue growth |
 
 ## API Endpoints
 
@@ -142,8 +146,8 @@ For convenience, use `{baseDir}/scripts/ceorater.sh`:
 
 ## Data Coverage
 
-- 516+ companies including all S&P 500 constituents
-- Updated daily after U.S. market close (typically by 8 PM ET)
+- 516 CEOs as of February 2026, including all S&P 500 constituents
+- Updated daily after U.S. market close (typically by 6:30 PM EST)
 - Safe to cache responses for up to 24 hours
 
 ## More Information
