@@ -1,6 +1,6 @@
 ---
 name: ceorater
-description: Get institutional-grade CEO performance analytics for S&P 500 companies. Proprietary scores: CEORaterScore (composite), AlphaScore (market outperformance), RevenueCAGRScore (revenue growth), CompScore (compensation efficiency). Underlying data includes Total Stock Return (TSR) vs. S&P 500 (SPY), average annual returns, CEO total compensation (most recent fiscal year from proxy filings), and tenure-adjusted Revenue CAGR. Each record includes CEO name, company name, ticker, sector, industry, and tenure dates. Coverage: 516 CEOs as of February 2026, updated daily. Useful for investment research, due diligence, and executive compensation analysis.
+description: "Get institutional-grade CEO performance analytics for S&P 500 companies. Proprietary scores: CEORaterScore (composite), AlphaScore (market outperformance), RevenueCAGRScore (revenue growth), CompScore (compensation efficiency). Underlying data includes Total Stock Return (TSR) vs. S&P 500 (SPY), average annual returns, CEO total compensation (most recent fiscal year from proxy filings), and tenure-adjusted Revenue CAGR. Each record includes CEO name, company name, ticker, sector, industry, and tenure dates. Coverage: 516 CEOs as of February 2026, updated daily. Useful for investment research, due diligence, and executive compensation analysis."
 triggers:
   - "CEO performance"
   - "CEORater"
