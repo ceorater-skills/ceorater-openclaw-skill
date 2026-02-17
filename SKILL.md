@@ -102,7 +102,8 @@ Always use `format=raw` for numeric values suitable for calculations.
 |------|---------|
 | 401 | Missing or invalid API key |
 | 404 | Ticker not found |
-| 400 | Bad request parameters |
+| 400 | Bad request parameters (for example, missing `q` on search) |
+| 429 | Rate limited, retry with backoff |
 
 ## Helper Script
 
@@ -121,8 +122,9 @@ For convenience, use `{baseDir}/scripts/ceorater.sh`:
 
 ## Data Coverage
 
-- 517 CEOs as of February 2026, including all S&P 500 constituents
-- Updated daily after U.S. market close (typically by 6:30 PM EST)
+- 500+ CEOs, including S&P 500 constituents
+- Live record count and refresh timestamp are available via `GET /v1/meta`
+- Updated daily on weekdays after U.S. market close
 - Safe to cache responses for up to 24 hours
 
 ## More Information
