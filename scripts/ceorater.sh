@@ -3,9 +3,9 @@
 # Usage: ceorater.sh <command> [args]
 #
 # Commands:
-#   get <ticker>       Get CEO data for a single company
-#   search <query>     Search companies by name, CEO, sector, or industry
-#   list [limit]       List companies (default limit: 20)
+#   get <ticker>       Get CEO data by ticker
+#   search <query>     Search by CEO name, company, ticker, sector, or industry
+#   list [limit]       List CEOs (default limit: 20)
 #
 # Requires: CEORATER_API_KEY environment variable
 # Get your key at: https://www.ceorater.com/api-docs.html
@@ -61,7 +61,7 @@ case "${1:-help}" in
             exit 1
         fi
         TICKER=$(printf '%s' "$TICKER" | tr '[:lower:]' '[:upper:]')
-        api_get "$BASE_URL/v1/company/$TICKER?format=raw"
+        api_get "$BASE_URL/v1/ceo/$TICKER?format=raw"
         ;;
 
     search)
@@ -85,7 +85,7 @@ case "${1:-help}" in
             echo "Error: Limit must be a positive integer."
             exit 1
         fi
-        api_get "$BASE_URL/v1/companies?limit=$LIMIT&format=raw"
+        api_get "$BASE_URL/v1/ceos?limit=$LIMIT&format=raw"
         ;;
 
     help|--help|-h|*)
@@ -94,9 +94,9 @@ case "${1:-help}" in
         echo "Usage: ceorater.sh <command> [args]"
         echo ""
         echo "Commands:"
-        echo "  get <ticker>     Get CEO data for a company (e.g., get AAPL)"
-        echo "  search <query>   Search by name, CEO, sector, industry"
-        echo "  list [limit]     List companies (default: 20)"
+        echo "  get <ticker>     Get CEO data by ticker (e.g., get AAPL)"
+        echo "  search <query>   Search by CEO name, company, ticker, sector, or industry"
+        echo "  list [limit]     List CEOs (default: 20)"
         echo ""
         echo "Environment:"
         echo "  CEORATER_API_KEY  Your API key (required for get/search/list)"
