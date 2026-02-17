@@ -36,19 +36,19 @@ Query CEO performance data for S&P 500 and major U.S. public companies via the C
 
 ## API Endpoints
 
-### Get Company by Ticker
+### Get CEO by Ticker
 ```bash
 curl -H "Authorization: Bearer $CEORATER_API_KEY" \
   "https://api.ceorater.com/v1/ceo/AAPL?format=raw"
 ```
 
-### Search Companies
+### Search CEOs
 ```bash
 curl -H "Authorization: Bearer $CEORATER_API_KEY" \
   "https://api.ceorater.com/v1/search?q=technology&format=raw"
 ```
 
-### List All Companies
+### List All CEOs
 ```bash
 curl -H "Authorization: Bearer $CEORATER_API_KEY" \
   "https://api.ceorater.com/v1/ceos?limit=100&format=raw"
@@ -109,7 +109,7 @@ Always use `format=raw` for numeric values suitable for calculations.
 For convenience, use `{baseDir}/scripts/ceorater.sh`:
 
 ```bash
-# Get single company
+# Get single CEO
 {baseDir}/scripts/ceorater.sh get AAPL
 
 # Search
