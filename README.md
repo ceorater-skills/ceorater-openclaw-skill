@@ -56,7 +56,7 @@ Plus TSR metrics, compensation data, tenure info, and more for 516+ companies.
 ## Example Usage
 
 Ask your OpenClaw agent:
-- "What's the CEORaterScore for Apple?"
+- "What's the CEORaterScore for Tim Cook?"
 - "Compare Microsoft and Google CEOs"
 - "Show me the top-rated technology sector CEOs"
 - "Which CEOs have an A CompScore?"
