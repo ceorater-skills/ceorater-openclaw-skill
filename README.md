@@ -51,7 +51,8 @@ Subscribe at https://www.ceorater.com/api-docs.html
 | RevenueCAGRScore | Tenure-adjusted revenue growth (0-100) |
 | CompScore | Compensation efficiency grade (A-F) |
 
-Plus TSR metrics, compensation data, tenure info, and more for 516+ companies.
+Plus TSR metrics, compensation data, tenure info, and more for 500+ CEOs.
+For the live total and latest refresh timestamp, call `GET /v1/meta`.
 
 ## Example Usage
 
