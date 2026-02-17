@@ -39,7 +39,7 @@ Query CEO performance data for S&P 500 and major U.S. public companies via the C
 ### Get Company by Ticker
 ```bash
 curl -H "Authorization: Bearer $CEORATER_API_KEY" \
-  "https://api.ceorater.com/v1/company/AAPL?format=raw"
+  "https://api.ceorater.com/v1/ceo/AAPL?format=raw"
 ```
 
 ### Search Companies
@@ -51,25 +51,25 @@ curl -H "Authorization: Bearer $CEORATER_API_KEY" \
 ### List All Companies
 ```bash
 curl -H "Authorization: Bearer $CEORATER_API_KEY" \
-  "https://api.ceorater.com/v1/companies?limit=100&format=raw"
+  "https://api.ceorater.com/v1/ceos?limit=100&format=raw"
 ```
 
 ## Usage Instructions
 
 When the user asks about CEO performance, ratings, or executive compensation:
 
-1. **Single company lookup:** Use the `/v1/company/{ticker}` endpoint
+1. **Single CEO lookup:** Use the `/v1/ceo/{ticker}` endpoint
 2. **Sector/industry analysis:** Use `/v1/search?q={query}` 
-3. **Bulk data:** Use `/v1/companies?limit=N`
+3. **Bulk data:** Use `/v1/ceos?limit=N`
 
 Always use `format=raw` for numeric values suitable for calculations.
 
 ### Example Queries
 
-- "What's the CEORaterScore for Apple?" → GET /v1/company/AAPL
+- "What's the CEORaterScore for Tim Cook?" → GET /v1/ceo/AAPL
 - "Show me technology sector CEOs" → GET /v1/search?q=technology
-- "Who are the top-rated CEOs?" → GET /v1/companies, sort by ceoraterScore
-- "Compare Tim Cook vs Satya Nadella" → GET /v1/company/AAPL and /v1/company/MSFT
+- "Who are the top-rated CEOs?" → GET /v1/ceos, sort by ceoraterScore
+- "Compare Tim Cook vs Satya Nadella" → GET /v1/ceo/AAPL and /v1/ceo/MSFT
 
 ## Response Format (raw)
 
